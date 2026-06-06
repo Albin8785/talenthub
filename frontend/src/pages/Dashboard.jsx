@@ -24,13 +24,13 @@ function Dashboard() {
         localStorage.getItem("access");
 
       const response = await api.get(
-        "profile/",
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+  "accounts/profile/",
+  {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  }
+);
 
       setProfile(response.data);
     } catch (error) {
@@ -39,15 +39,23 @@ function Dashboard() {
   };
 
   const fetchMentors = async () => {
-    try {
-      const response =
-        await api.get("mentors/");
+  try {
+    const token = localStorage.getItem("access");
 
-      setMentors(response.data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+    const response = await api.get(
+      "mentors/",
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+
+    setMentors(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+};
 
   if (!profile) {
     return (

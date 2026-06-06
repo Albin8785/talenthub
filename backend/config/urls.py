@@ -21,7 +21,7 @@ from rest_framework_simplejwt.views import (
 )
 
 urlpatterns = [
-    path("api/", include("accounts.urls")),
+    path("api/", include("backend.accounts.urls")),
     path(
         "api/login/",
         TokenObtainPairView.as_view()
@@ -31,5 +31,5 @@ urlpatterns = [
         "api/token/refresh/",
         TokenRefreshView.as_view()
     ),
-    path("api/", include("mentors.urls")),
+    path("api/", include("backend.mentors.urls")),
 ]

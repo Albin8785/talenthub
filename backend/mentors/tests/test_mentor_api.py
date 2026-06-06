@@ -1,6 +1,6 @@
 from rest_framework.test import APITestCase
 from django.urls import reverse
-from mentors.models import Mentor
+from backend.mentors.models import Mentor
 
 
 class MentorAPITest(APITestCase):
